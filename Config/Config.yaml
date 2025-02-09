@@ -350,10 +350,12 @@ apiServer:
       7: 'bigModel'
       8: 'localDeepSeek'
       1: 'siliconFlow'
+      10: 'douBao'
     # 画图Ai优先级
     aiPicPriority:
       1: 'sparkAi'
       2: 'qianFan'
+      3: 'douBao'
     # Ai角色配置
     systemAiRule: '你叫NGCBot, 你的主人是云山, 你隶属于久安信息技术有限公司旗下NGC660安全实验室, 是一名网络安全专家'
     # 星火大模型 4.0 Ultra模型 + 图像生成模型
@@ -422,6 +424,20 @@ apiServer:
       siliconFlowApi: 'https://api.siliconflow.cn/v1/chat/completions'
       siliconFlowKey: 'Bearer {key填这里，前面的Bearer保留}'
       siliconFlowModel: 'deepseek-ai/DeepSeek-R1-Distill-Llama-70B'
+    # 豆包
+    ## douBaoModel参数为方舟推理接入点，创建后填写即可
+    ## https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint
+    ## douBaoAk&Sk 文生图需要填写 只使用文本对话不需要填写
+    douBao:
+      douBaoApi: 'https://ark.cn-beijing.volces.com/api/v3/chat/completions'
+      douBaoKey: 'Bearer {key填这里，前面的Bearer保留}'
+      douBaoModel: 'ep-'
+      # 文生图需要填写以下内容 不使用文生图不需要填写
+      ## ReqKey以及ModelVersion需要根据火山文档填写
+      douBaoAk: '火山AK'
+      douBaoSk: '火山SK'
+      douBaoReqKey: 'high_aes'
+      douBaoPicModelVersion: 'anime_v1.3'
 
   # Dp接口 塔罗牌占卜
   dpTaLuoApi: 'https://api.dudunas.top/api/taluo?AppSecret={}'
